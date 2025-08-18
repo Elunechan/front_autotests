@@ -13,7 +13,7 @@ class SelectFilter {
 
     /** Функция для получения значений из фильтра в формате списка
      */
-    fun getList(filterName: String): List<String> {
+    fun valuesToList(filterName: String): List<String> {
         val select = `$`("select.form-control.showcase-filter-input[name='$filterName']").shouldBe(visible)
         return select.`$$`("option").texts()
     }

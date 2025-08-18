@@ -2,10 +2,10 @@ package ui.config
 
 
 object Routes {
-    const val BASE = "https://funpay.com"
-    const val LOGIN_PAGE = "$BASE/account/login"
-    const val WOW = "$BASE/chips/2/"
-    const val REGISTER = "$BASE/account/register"
+    const val BASE_URL = "https://funpay.com"
+    const val LOGIN_PAGE = "$BASE_URL/account/login"
+    const val WOW = "$BASE_URL/chips/2/"
+    const val REGISTER = "$BASE_URL/account/register"
 }
 
 object Credentials {

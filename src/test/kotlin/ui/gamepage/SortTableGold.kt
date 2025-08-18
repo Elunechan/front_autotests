@@ -10,12 +10,12 @@ import org.junit.jupiter.api.Assertions.assertTrue
 class SortTableGold() : BaseTest() {
 
     @Test
-    @DisplayName ("Сортируем таблицу по цене")
+    @DisplayName ("Сортировка таблицы по убыванию цены")
     fun sortForPrice() {
         open(Routes.WOW)
-        val lowPrice = price.priceFromText()
+        val lowPrice = converter.stringToInt()
         gamePage.sortByPrice.click()
-        val bigPrice = price.priceFromText()
+        val bigPrice = converter.stringToInt()
         assertTrue(lowPrice < bigPrice, "Ожидалось, что первая цена будет меньше второй")
     }
 }

@@ -9,10 +9,8 @@ import com.codeborne.selenide.Selenide.`$$`
 open class LoginPage {
     val enter = `$$`("button")
         .findBy(Condition.text("Войти"))
-    val login = `$`("[placeholder='Имя или почта'")
+    val login = `$`("[placeholder='Имя или почта']")
     val pass = `$`("[placeholder='Пароль'")
-    val captcha = `$$`(".recaptcha-checkbox-borderAnimation")
-        .findBy(Condition.value("role='presentation'"))
 }
 
 

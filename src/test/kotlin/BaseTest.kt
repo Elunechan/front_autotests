@@ -8,7 +8,7 @@ import pages.GamePage
 import ui.components.GridTable
 import ui.components.SelectFilter
 import ui.pages.MainPage
-import ui.utils.Price
+import ui.utils.StringIntConverter
 
 
 
@@ -37,5 +37,5 @@ open class BaseTest {
     val gamePage: GamePage by lazy { GamePage() }
     val selectFilter: SelectFilter by lazy { SelectFilter() }
     val gridTable: GridTable by lazy { GridTable() }
-    val price: Price by lazy { Price() }
+    val converter: StringIntConverter by lazy { StringIntConverter() }
 }

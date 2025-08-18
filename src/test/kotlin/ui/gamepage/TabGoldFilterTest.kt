@@ -22,7 +22,7 @@ class TabGoldFilterTest() : BaseTest() {
         open(Routes.WOW)
         gamePage.serverDropdown.click()
         selectFilter.searchForTextInFilter(text = "Галакронд", filterName = "server")
-        gridTable.checkTable(columnCss = ".tc-server.hidden-xxs", expected = "Галакронд", anyText = "Любой")
+        gridTable.searchingValueInTable(columnCss = ".tc-server.hidden-xxs", expected = "Галакронд", anyText = "Любой")
 
     }
 
@@ -31,7 +31,7 @@ class TabGoldFilterTest() : BaseTest() {
     fun checkFilterSides() {
         open(Routes.WOW)
         gamePage.sideDropdown.shouldBe(visible).click()
-        val actual = selectFilter.getList("side")
+        val actual = selectFilter.valuesToList("side")
         assertEquals(ListGold.sides.sorted(), actual.sorted())
     }
 

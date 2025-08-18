@@ -12,7 +12,7 @@ class HeaderNavigationTests : BaseTest() {
     @Test
     @DisplayName("Проверка нажатия кнопки 'Войти'")
     fun openAuth() {
-        open(Routes.BASE)
+        open(Routes.BASE_URL)
         mainPage.login.click()
         webdriver().shouldHave(url(Routes.LOGIN_PAGE))
     }
@@ -21,7 +21,7 @@ class HeaderNavigationTests : BaseTest() {
     @Test
     @DisplayName("Проверка нажатия кнопки 'Зарегистрироваться'")
     fun openReg() {
-        open(Routes.BASE)
+        open(Routes.BASE_URL)
         mainPage.register.click()
         webdriver().shouldHave(url(Routes.REGISTER))
     }

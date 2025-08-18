@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Assertions.assertTrue
 class GridTable {
 
     /**
-     * Проверяет, что в переданной колонке у каждой видимой строки значение
-     * либо равно expected (выбранному в фильтре), либо равно anyText (по умолчанию "Любая").
+     * Проверяет, что в переданном столбце у каждой строки значение
+     * либо равно expected (т.е в выбранному в фильтре), либо равно anyText (по умолчанию "Любая").
      * Дополнительно убеждаемся, что есть хотя бы одна строка ровно с expected.
      *
      * @param columnCss   css-селектор ячейки нужной колонки внутри строки. Пример - div.tc-server.hidden-xxs
@@ -16,7 +16,7 @@ class GridTable {
      * @param anyText     текст варианта для доп. значения (по умолчанию "Любая")
      */
 
-    fun checkTable(
+    fun searchingValueInTable(
         columnCss: String,
         expected: String,
         anyText: String = "Любая"

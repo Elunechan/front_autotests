@@ -6,8 +6,8 @@ import com.codeborne.selenide.Selenide.`$$`
 
 /** Функция принимает значение в формате строки, убирает все лишнее и возвращает Double
  */
-class Price {
-    fun priceFromText(): Double {
+class StringIntConverter {
+    fun stringToInt(): Double {
         val rows = `$$`("a.tc-item").filter(visible).shouldHave(sizeGreaterThan(0))
         val text = rows.first().find(".tc-price").text().trim()
 

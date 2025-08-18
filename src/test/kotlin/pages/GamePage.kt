@@ -20,6 +20,7 @@ open class GamePage {
     val saleButton = `$`(".col-sm-4.hidden-xs")
     val toBeOnlineRadioButton = `$`(".form-control-box.switch")
     val sortByPrice = `$`(".tc-price.text-right.sort.ascending")
+    val sortByAmount = `$`(".tc-amount.text-right.sort.ascending")
 
     // --- Статус онлайн/оффлайн у продавцов ---
     val onlineAvatars = `$$`(".media-user.style-circle.online .avatar-photo")
