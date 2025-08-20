@@ -2,6 +2,7 @@ package ui.components
 
 import com.codeborne.selenide.Selenide.`$$`
 import com.codeborne.selenide.Condition.visible
+import com.codeborne.selenide.SelenideElement
 import org.junit.jupiter.api.Assertions.assertTrue
 
 class GridTable {
@@ -17,7 +18,7 @@ class GridTable {
      */
 
     fun searchingValueInTable(
-        columnCss: String,
+        columnCss: SelenideElement,
         expected: String,
         anyText: String = "Любая"
     ) {

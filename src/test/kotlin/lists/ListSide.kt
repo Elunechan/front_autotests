@@ -1,6 +1,6 @@
 package ui.lists
 
-class ListGold {
+class ListSide {
     companion object {
         val sides: List<String> = listOf(
             "Сторона",
