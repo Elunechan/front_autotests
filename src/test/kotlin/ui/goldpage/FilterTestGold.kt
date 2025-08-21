@@ -22,7 +22,7 @@ class FilterTestGold() : BaseTest() {
         open(Routes.WOW)
         gamePage.serverDropdown.click()
         selectFilter.searchForTextInFilter(dropdown = gamePage.serverDropdown, text = "Галакронд")
-        gridTable.searchingValueInTable(columnCss = gamePage.tttest, expected = "Галакронд", anyText = "Любой")
+        gridTable.searchingValueInTable(columnCss = gamePage.goldTableSelectorServer, expected = "Галакронд", anyText = "Любой")
 
     }
 
@@ -37,7 +37,7 @@ class FilterTestGold() : BaseTest() {
 
     @Test
     @DisplayName("Проверка кнопки 'Продать игровую валюту' если пользователь не авторизован")
-    fun chechButtonSellGold() {
+    fun checkButtonSellGold() {
         open(Routes.WOW)
         gamePage.saleButton.shouldBe(visible).click()
         webdriver().shouldHave(url(Routes.LOGIN_PAGE))

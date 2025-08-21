@@ -25,12 +25,9 @@ class FilterTestAccount() : BaseTest() {
     fun checkFilterServer() {
         open(Routes.ACCOUNT)
         gamePage.serverDropdown.click()
-        selectFilter.searchForTextInFilter(text = "Свежеватель Душ", dropdown = gamePage.serverDropdown)
-        gridTable.searchingValueInTable(
-            columnCss = ".tc-server.hidden-xs",
-            expected = "Свежеватель Душ",
-            anyText = "Любой"
-        )
+        selectFilter.searchForTextInFilter(dropdown = gamePage.serverDropdown, text = "Галакронд")
+        gridTable.searchingValueInTable(columnCss = gamePage.accountTableSelectorServer, expected = "Галакронд", anyText = "Любой")
+
     }
 
     @Test

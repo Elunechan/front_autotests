@@ -1,6 +1,7 @@
 package pages
 
 import com.codeborne.selenide.Condition.visible
+import com.codeborne.selenide.ElementsCollection
 import com.codeborne.selenide.Selenide.*
 import com.codeborne.selenide.SelenideElement
 
@@ -24,7 +25,9 @@ open class GamePage {
     val sellAccountButton = `$`(".btn.btn-default.btn-wide[href='https://funpay.com/lots/13/trade']")
     val textFieldFind = `$x`("//*[@id='content']/div/div[3]/div/div[2]/div[1]/div[2]/div[1]/div/form/div[5]/input")
     val noOffersText = `$x`("//*[@id='content']/div/div[3]/div/div[2]/p")
-    val tttest = `$`(".tc-server.hidden-xxs")
+    val goldTableSelectorServer = ".tc-server.hidden-xxs"
+    val accountTableSelectorServer = ".tc-server.hidden-xs"
+    val lotCell = `$$`("a.tc-item")
 
     // --- Функции ---
 

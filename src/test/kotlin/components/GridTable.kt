@@ -1,39 +1,38 @@
 package ui.components
 
-import com.codeborne.selenide.Selenide.`$$`
 import com.codeborne.selenide.Condition.visible
-import com.codeborne.selenide.SelenideElement
 import org.junit.jupiter.api.Assertions.assertTrue
+import ui.BaseTest
 
-class GridTable {
+class GridTable : BaseTest() {
 
     /**
      * Проверяет, что в переданном столбце у каждой строки значение
-     * либо равно expected (т.е в выбранному в фильтре), либо равно anyText (по умолчанию "Любая").
-     * Дополнительно убеждаемся, что есть хотя бы одна строка ровно с expected.
+     * либо равно expected (т.е в выбранному в фильтре), либо равно anyText (по умолчанию "Любой").
+     * Дополнительно проверяем, что есть хотя бы одна строка ровно с expected.
      *
      * @param columnCss   css-селектор ячейки нужной колонки внутри строки. Пример - div.tc-server.hidden-xxs
      * @param expected    выбранное в фильтре значение
-     * @param anyText     текст варианта для доп. значения (по умолчанию "Любая")
+     * @param anyText     текст варианта для доп. значения (по умолчанию "Любой")
      */
 
     fun searchingValueInTable(
-        columnCss: SelenideElement,
+        columnCss: String,
         expected: String,
-        anyText: String = "Любая"
+        anyText: String = "Любой"
     ) {
 
-        val rows = `$$`("a.tc-item").filter(visible)
+        val rows = gamePage.lotCell.filter(visible)
 
         var hasSelected = false
 
         for (row in rows) {
             val cellText = row.find(columnCss).text()
-            val ok = cellText.equals(expected) ||
-                    cellText.equals(anyText)
+            val isValidCell = cellText == expected ||
+                    cellText == anyText
 
             assertTrue(
-                ok,
+                isValidCell,
                 "В колонке '$columnCss' получили '$cellText'. Ожидали '$expected' или '$anyText'."
             )
 
