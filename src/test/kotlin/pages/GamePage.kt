@@ -1,7 +1,6 @@
 package pages
 
 import com.codeborne.selenide.Condition.visible
-import com.codeborne.selenide.ElementsCollection
 import com.codeborne.selenide.Selenide.*
 import com.codeborne.selenide.SelenideElement
 
@@ -43,14 +42,14 @@ open class GamePage {
     /** Проверка на то, что лоты отображаются
      * @param "noSeeLots" - подсказка о том, что лоты не найдены
      */
-    fun lotsBeVisible(noSeeLots: SelenideElement) {
-        noSeeLots.shouldNotBe(visible)
+    fun lotsBeVisible(seeLots: SelenideElement) {
+        seeLots.shouldNotBe(visible)
     }
 
     /** Проверка на то, что лоты НЕ отображаются
      * @param "noSeeLots" - подсказка о том, что лоты не найдены
      */
-    fun lotsNotVisible(noSeeLots: SelenideElement) {
-        noSeeLots.shouldBe(visible)
+    fun lotsNotVisible(seeLots: SelenideElement) {
+        seeLots.shouldBe(visible)
     }
 }

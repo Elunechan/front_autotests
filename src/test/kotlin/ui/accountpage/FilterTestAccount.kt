@@ -21,12 +21,12 @@ import ui.lists.ListSide
 class FilterTestAccount() : BaseTest() {
 
     @Test
-    @DisplayName("Проверка фильтра 'Сервер' и сортировки таблицы по выбранному в фильтре значению")
+    @DisplayName("Проверка фильтра 'Сервер' и сортировка таблицы по выбранному в фильтре значению")
     fun checkFilterServer() {
         open(Routes.ACCOUNT)
         gamePage.serverDropdown.click()
         selectFilter.searchForTextInFilter(dropdown = gamePage.serverDropdown, text = "Галакронд")
-        gridTable.searchingValueInTable(columnCss = gamePage.accountTableSelectorServer, expected = "Галакронд", anyText = "Любой")
+        gridTable.searchingValueInTable(columnName = gamePage.accountTableSelectorServer, searchingName = "Галакронд", anyText = "Любой")
 
     }
 
@@ -40,7 +40,7 @@ class FilterTestAccount() : BaseTest() {
     }
 
     @Test
-    @DisplayName("Проверка значений в фильтре 'Класс'")
+    @DisplayName("Проверка значений в фильтре 'Класс' на соответствие с ожидаемым списком")
     fun checkFilterClasses() {
         open(Routes.ACCOUNT)
         gamePage.classesDropdown.shouldBe(visible).click()
@@ -49,7 +49,7 @@ class FilterTestAccount() : BaseTest() {
     }
 
     @Test
-    @DisplayName("Проверка значений в фильтре 'Расы'")
+    @DisplayName("Проверка значений в фильтре 'Расы' на соответствие с ожидаемым списком")
     fun checkFilterRace() {
         open(Routes.ACCOUNT)
         gamePage.raceDropdown.shouldBe(visible).click()
@@ -66,7 +66,7 @@ class FilterTestAccount() : BaseTest() {
     }
 
     @Test
-    @DisplayName("Проверка флага 'Только продавцы онлайн'")
+    @DisplayName("Проверка флага 'Только продавцы онлайн' и отображение в таблице")
     fun checkUserOnline() {
         open(Routes.ACCOUNT)
         gamePage.toBeOnlineRadioButton.click()

@@ -11,39 +11,39 @@ class GridTable : BaseTest() {
      * либо равно expected (т.е в выбранному в фильтре), либо равно anyText (по умолчанию "Любой").
      * Дополнительно проверяем, что есть хотя бы одна строка ровно с expected.
      *
-     * @param columnCss   css-селектор ячейки нужной колонки внутри строки. Пример - div.tc-server.hidden-xxs
-     * @param expected    выбранное в фильтре значение
+     * @param columnName   css-селектор ячейки нужной колонки внутри строки. Пример - div.tc-server.hidden-xxs
+     * @param searchingName    выбранное в фильтре значение
      * @param anyText     текст варианта для доп. значения (по умолчанию "Любой")
      */
 
     fun searchingValueInTable(
-        columnCss: String,
-        expected: String,
+        columnName: String,
+        searchingName: String,
         anyText: String = "Любой"
     ) {
 
         val rows = gamePage.lotCell.filter(visible)
 
-        var hasSelected = false
+        var hasSelected = false // так как может оказаться, что лотов с таким фильтром нет
 
         for (row in rows) {
-            val cellText = row.find(columnCss).text()
-            val isValidCell = cellText == expected ||
+            val cellText = row.find(columnName).text()
+            val isValidCell = cellText == searchingName ||
                     cellText == anyText
 
             assertTrue(
                 isValidCell,
-                "В колонке '$columnCss' получили '$cellText'. Ожидали '$expected' или '$anyText'."
+                "В колонке '$columnName' получен '$cellText'. Ожидалось '$searchingName' или '$anyText'."
             )
 
-            if (cellText.equals(expected, ignoreCase = true)) {
+            if (cellText.equals(searchingName, ignoreCase = true)) {
                 hasSelected = true
             }
         }
 
         assertTrue(
             hasSelected,
-            "Нет ни одной строки именно с '$expected' (только '$anyText')."
+            "Нет ни одной строки именно с '$searchingName' (только '$anyText')."
         )
     }
 }

@@ -17,17 +17,17 @@ import com.codeborne.selenide.CollectionCondition.size
 class FilterTestGold() : BaseTest() {
 
     @Test
-    @DisplayName("Проверка фильтра 'Сервер'")
+    @DisplayName("Проверка фильтра 'Сервер' и сортировка таблицы по выбранному в фильтре значению")
     fun checkFilterServer() {
         open(Routes.WOW)
         gamePage.serverDropdown.click()
         selectFilter.searchForTextInFilter(dropdown = gamePage.serverDropdown, text = "Галакронд")
-        gridTable.searchingValueInTable(columnCss = gamePage.goldTableSelectorServer, expected = "Галакронд", anyText = "Любой")
+        gridTable.searchingValueInTable(columnName = gamePage.goldTableSelectorServer, searchingName = "Галакронд", anyText = "Любой")
 
     }
 
     @Test
-    @DisplayName("Проверка значений в фильтре 'Сторона'")
+    @DisplayName("Проверка значений в фильтре 'Сторона' и соответствия пунктов в выпадающем списке")
     fun checkFilterSides() {
         open(Routes.WOW)
         gamePage.sideDropdown.shouldBe(visible).click()
@@ -44,7 +44,7 @@ class FilterTestGold() : BaseTest() {
     }
 
     @Test
-    @DisplayName("Проверка флага 'Только продавцы онлайн'")
+    @DisplayName("Проверка флага 'Только продавцы онлайн' и отображение в таблице")
     fun checkUserOnline() {
         open(Routes.WOW)
         gamePage.toBeOnlineRadioButton.click()

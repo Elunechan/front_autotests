@@ -6,7 +6,7 @@ import pages.GamePage
 
 class SelectFilter : GamePage() {
 
-    /** Функция для поиска элемента в фильтре по названию
+    /** Функция для поиска элемента в фильтре по названию и клик на него для фильтрации таблицы
      */
     fun searchForTextInFilter(dropdown: SelenideElement, text: String) {
         dropdown.shouldBe(visible).selectOption(text)
