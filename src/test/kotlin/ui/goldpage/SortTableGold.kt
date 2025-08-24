@@ -7,10 +7,12 @@ import ui.config.Routes
 import com.codeborne.selenide.Selenide.*
 import org.junit.jupiter.api.Assertions.assertTrue
 
+
+@DisplayName ("Сортировка таблицы по кликам на столбцы в разделе 'Золото'")
 class SortTableGold() : BaseTest() {
 
     @Test
-    @DisplayName ("Сортировка таблицы по убыванию цены")
+    @DisplayName("Сортировка таблицы по убыванию цены")
     fun sortForPrice() {
         open(Routes.WOW)
         val lowPrice = converter.stringToInt()

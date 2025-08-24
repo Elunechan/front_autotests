@@ -12,5 +12,3 @@ open class LoginPage {
     val login = `$`("[placeholder='Имя или почта']")
     val pass = `$`("[placeholder='Пароль'")
 }
-
-

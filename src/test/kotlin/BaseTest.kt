@@ -21,7 +21,7 @@ open class BaseTest {
             Configuration.browser = "chrome"
             Configuration.browserSize = "1600x900"
             Configuration.timeout = 2000
-            Configuration.headless = false
+            Configuration.headless = true
         }
     }
 

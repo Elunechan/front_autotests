@@ -17,7 +17,7 @@ import ui.lists.ListClass
 import ui.lists.ListRace
 import ui.lists.ListSide
 
-
+@DisplayName("Проверка фильтрации в разделе 'Аккаунты'")
 class FilterTestAccount() : BaseTest() {
 
     @Test
@@ -26,12 +26,16 @@ class FilterTestAccount() : BaseTest() {
         open(Routes.ACCOUNT)
         gamePage.serverDropdown.click()
         selectFilter.searchForTextInFilter(dropdown = gamePage.serverDropdown, text = "Галакронд")
-        gridTable.searchingValueInTable(columnName = gamePage.accountTableSelectorServer, searchingName = "Галакронд", anyText = "Любой")
+        gridTable.searchingValueInTable(
+            columnName = gamePage.accountTableSelectorServer,
+            searchingName = "Галакронд",
+            anyText = "Любой"
+        )
 
     }
 
     @Test
-    @DisplayName("Проверка фильтра 'Сторона' и соответствия пунктов в выпадающем списке")
+    @DisplayName("Проверка фильтра 'Сторона' и соответствие пунктов в выпадающем списке")
     fun checkFilterSides() {
         open(Routes.ACCOUNT)
         gamePage.sideDropdown.shouldBe(visible).click()
@@ -77,7 +81,7 @@ class FilterTestAccount() : BaseTest() {
 
     @ParameterizedTest()
     @DisplayName(
-                "Параметризированный тест на ввод символов в поле 'Поиск по описанию'. " +
+        "Параметризированный тест на ввод символов в поле 'Поиск по описанию'. " +
                 "Проверка ввода букв, цифр, а так же значения которого нет в списке лотов, чтобы проверить отображающийся блок с текстом"
     )
     @CsvSource(

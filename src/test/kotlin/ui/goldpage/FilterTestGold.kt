@@ -13,7 +13,7 @@ import ui.lists.ListSide
 import com.codeborne.selenide.CollectionCondition.size
 
 
-
+@DisplayName ("Проверка фильтрации в разделе 'Золото'")
 class FilterTestGold() : BaseTest() {
 
     @Test
@@ -52,7 +52,3 @@ class FilterTestGold() : BaseTest() {
         gamePage.offlineAvatars.filter(visible).shouldHave(size(0))
     }
 }
-
-
-
-

@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test
 import ui.BaseTest
 import ui.config.Routes
 
+@DisplayName ("Проверка кнопок в хедере на главной странице")
 class HeaderNavigationTests : BaseTest() {
 
     @Test
