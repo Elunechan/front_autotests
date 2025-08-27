@@ -8,6 +8,7 @@ import pages.GamePage
 import ui.components.GridTable
 import ui.components.SelectFilter
 import ui.lists.ListClass
+import ui.pages.LotPage
 import ui.pages.MainPage
 import ui.utils.StringIntConverter
 
@@ -38,5 +39,5 @@ open class BaseTest {
     val selectFilter: SelectFilter by lazy { SelectFilter() }
     val gridTable: GridTable by lazy { GridTable() }
     val converter: StringIntConverter by lazy { StringIntConverter() }
-    val listClass: ListClass by lazy { ListClass() }
+    val lotPage: LotPage by lazy { LotPage() }
 }
