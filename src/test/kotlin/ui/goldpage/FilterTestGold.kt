@@ -22,7 +22,7 @@ class FilterTestGold() : BaseTest() {
         open(Routes.WOW)
         gamePage.serverDropdown.click()
         selectFilter.searchForTextInFilter(dropdown = gamePage.serverDropdown, text = "Галакронд")
-        gridTable.searchingValueInTable(columnName = gamePage.goldTableSelectorServer, searchingName = "Галакронд", anyText = "Любой")
+        gridTable.verifyValuesInTable(columnName = gamePage.goldTableSelectorServer, searchingName = "Галакронд", anyText = "Любой")
 
     }
 

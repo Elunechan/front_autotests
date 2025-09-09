@@ -26,7 +26,7 @@ class FilterTestAccount() : BaseTest() {
         open(Routes.ACCOUNT)
         gamePage.serverDropdown.click()
         selectFilter.searchForTextInFilter(dropdown = gamePage.serverDropdown, text = "Галакронд")
-        gridTable.searchingValueInTable(
+        gridTable.verifyValuesInTable(
             columnName = gamePage.accountTableSelectorServer,
             searchingName = "Галакронд",
             anyText = "Любой"

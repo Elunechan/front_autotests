@@ -18,9 +18,6 @@ open class LotPage {
     val paymentMethod = `$`(".filter-option .payment")
     val sbp = `$$`(".payment-title").findBy(text("СБП"))
 
-    val testPrice: String = "1" // Цена в рублях, которую заплатит покупатель
-    val testGetGold: String = "6.73" // Количество золота, которое получит покупатель
-    val buyerWillPay: String = "0.16" // Цена, которую заплатит покупатель, купив testPrice кол-во валюты
 
     fun setPaymentMethodSbp() {
         paymentMethod.click()

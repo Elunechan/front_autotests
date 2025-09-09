@@ -2,9 +2,11 @@ package ui.components
 
 import com.codeborne.selenide.Condition.visible
 import org.junit.jupiter.api.Assertions.assertTrue
-import ui.BaseTest
+import pages.GamePage
 
-class GridTable : BaseTest() {
+// toDo: Декомпозировать
+
+class GridTable {
 
     /**
      * Проверяет, что в переданном столбце у каждой строки значение
@@ -16,7 +18,8 @@ class GridTable : BaseTest() {
      * @param anyText     текст варианта для доп. значения (по умолчанию "Любой")
      */
 
-    fun searchingValueInTable(
+    val gamePage = GamePage()
+    fun verifyValuesInTable(
         columnName: String,
         searchingName: String,
         anyText: String = "Любой"

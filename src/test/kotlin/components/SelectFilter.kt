@@ -2,9 +2,9 @@ package ui.components
 
 import com.codeborne.selenide.Condition.visible
 import com.codeborne.selenide.SelenideElement
-import pages.GamePage
 
-class SelectFilter : GamePage() {
+
+class SelectFilter {
 
     /** Функция для поиска элемента в фильтре по названию и клик на него для фильтрации таблицы
      */

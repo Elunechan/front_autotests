@@ -7,11 +7,11 @@ import org.junit.jupiter.api.BeforeAll
 import pages.GamePage
 import ui.components.GridTable
 import ui.components.SelectFilter
-import ui.lists.ListClass
 import ui.pages.LotPage
 import ui.pages.MainPage
 import ui.utils.StringIntConverter
 
+// toDo: Декомпозировать
 
 open class BaseTest {
 
@@ -34,10 +34,10 @@ open class BaseTest {
     }
 
 
-    val mainPage: MainPage by lazy { MainPage() }
-    val gamePage: GamePage by lazy { GamePage() }
-    val selectFilter: SelectFilter by lazy { SelectFilter() }
-    val gridTable: GridTable by lazy { GridTable() }
-    val converter: StringIntConverter by lazy { StringIntConverter() }
-    val lotPage: LotPage by lazy { LotPage() }
+    val mainPage = MainPage()
+    val gamePage = GamePage()
+    val selectFilter = SelectFilter()
+    val gridTable = GridTable()
+    val converter = StringIntConverter()
+    val lotPage = LotPage()
 }

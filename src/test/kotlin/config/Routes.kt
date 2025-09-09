@@ -9,9 +9,3 @@ object Routes {
     const val ACCOUNT = "$BASE_URL/lots/13/"
     const val LOT_PAGE = "$BASE_URL/chips/offer?id=16142978-2-2-12-1" //Тестовый лот тестового юзера. Неизменяем
 }
-
-object Credentials {
-
-    const val USERNAME = ""
-    const val PASSWORD = ""
-}

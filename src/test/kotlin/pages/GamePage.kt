@@ -34,20 +34,19 @@ open class GamePage {
      * @param "fieldName" - поле ввода
      * @param "query" - значение которое нужно ввести
      */
-    fun searchField(fieldName: SelenideElement, query: String): GamePage {
-        fieldName.setValue(query)
-        return this
+    fun searchField(fieldName: SelenideElement, query: String) {
+        fieldName.value = query
     }
 
     /** Проверка на то, что лоты отображаются
-     * @param "noSeeLots" - подсказка о том, что лоты не найдены
+     * @param "seeLots" - подсказка о том, что лоты не найдены
      */
     fun lotsBeVisible(seeLots: SelenideElement) {
         seeLots.shouldNotBe(visible)
     }
 
     /** Проверка на то, что лоты НЕ отображаются
-     * @param "noSeeLots" - подсказка о том, что лоты не найдены
+     * @param "seeLots" - подсказка о том, что лоты не найдены
      */
     fun lotsNotVisible(seeLots: SelenideElement) {
         seeLots.shouldBe(visible)
